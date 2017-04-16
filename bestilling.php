@@ -26,10 +26,9 @@ Class Bestilling{
     function lagreTilDb(){
        $kunde=$this->kunde;
        $db = new mysqli('localhost', 'root', '', 'kino');
-       $sql = "INSERT INTO bestilling(navn, epost, telefon, film, antall, type)
-           VALUES('$kunde->navn', '$kunde->epost', '$kunde->telefon', "
+       $sql = "INSERT INTO bestilling(navn,telefon, epost, film, antall, type)
+           VALUES('$kunde->navn', '$kunde->telefon', '$kunde->epost', "
                . "'$this->film', '$this->antall', '$this->type');";
-       echo $sql;
        echo "<br>";
        $res = $db->query($sql);
             if (!$res) {

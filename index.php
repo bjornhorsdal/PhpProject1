@@ -6,6 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
+        <script src ="validering.js"></script>
         <meta charset="UTF-8">
         <title></title>
     </head>
@@ -142,16 +143,17 @@ and open the template in the editor.
         echo "<br>";
         ?>
         <h3>Bestilling av kinobillett</h3>
-        <form action="side2.php" method="Get">
+        <form action="side2.php" method="Get" onsubmit="return valider_opplysninger()">
+            
             <table>
                 <tr>
                     <td>Navn</td><td><input type="text" name="Navn"/></td>
                 </tr>
                 <tr>
-                    <td>Telefon</td><td><input type="text" name="Telefon"/></td>
+                    <td>Telefon</td><td><input id="telefon" type="text" name="Telefon"/></td>
                 </tr>
                 <tr>
-                    <td>E-post</td><td><input type="text" name="E-post"/></td>
+                    <td>E-post</td><td><input id="epost" type="text" name="E-post"/></td>
                 </tr>
                 
                 <tr>    

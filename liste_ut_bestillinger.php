@@ -13,7 +13,7 @@ $res = $db->query($sql);
             $antall_rader = $db->affected_rows;
             for ($i=0; $i < $antall_rader; $i++){
                 $rad = $res->fetch_object();
-                $kunde= new Kunde($rad->navn, $rad->epost, $rad->telefon);
+                $kunde= new Kunde($rad->navn, $rad->telefon, $rad->epost);
                 $bestilling = new Bestilling($kunde, $rad->film, $rad->antall, $rad->type);
                 $bestillinger[]=$bestilling;
                                
